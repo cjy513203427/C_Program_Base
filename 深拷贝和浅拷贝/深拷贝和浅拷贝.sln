@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2026
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "深拷贝和浅拷贝", "深拷贝和浅拷贝\深拷贝和浅拷贝.vcxproj", "{23B24021-5202-4D80-A47D-5B568A933218}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23B24021-5202-4D80-A47D-5B568A933218}.Debug|x64.ActiveCfg = Debug|x64
+		{23B24021-5202-4D80-A47D-5B568A933218}.Debug|x64.Build.0 = Debug|x64
+		{23B24021-5202-4D80-A47D-5B568A933218}.Debug|x86.ActiveCfg = Debug|Win32
+		{23B24021-5202-4D80-A47D-5B568A933218}.Debug|x86.Build.0 = Debug|Win32
+		{23B24021-5202-4D80-A47D-5B568A933218}.Release|x64.ActiveCfg = Release|x64
+		{23B24021-5202-4D80-A47D-5B568A933218}.Release|x64.Build.0 = Release|x64
+		{23B24021-5202-4D80-A47D-5B568A933218}.Release|x86.ActiveCfg = Release|Win32
+		{23B24021-5202-4D80-A47D-5B568A933218}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C48FB0CC-AA50-46A6-BB5F-84DE7FDB50D0}
+	EndGlobalSection
+EndGlobal
