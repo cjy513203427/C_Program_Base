@@ -330,7 +330,6 @@ void MazePerson::setPersonSpeed(long speed)
 {
 	//设置一个时间延迟的值
 	personSpeed = speed;
-	
 }
 
 /*

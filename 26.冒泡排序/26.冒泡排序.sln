@@ -3,9 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "25.迷宫源码", "25.迷宫源码\25.迷宫源码.vcxproj", "{E9B46643-CC57-44DD-9323-411FFA8B3BDB}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "26.冒泡排序", "..\26.冒泡排序\26.冒泡排序.vcxproj", "{F0A68391-147F-4AF7-B340-7EABD2872C58}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "26.冒泡排序", "26.冒泡排序.vcxproj", "{F0A68391-147F-4AF7-B340-7EABD2872C58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,14 +13,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E9B46643-CC57-44DD-9323-411FFA8B3BDB}.Debug|x64.ActiveCfg = Debug|x64
-		{E9B46643-CC57-44DD-9323-411FFA8B3BDB}.Debug|x64.Build.0 = Debug|x64
-		{E9B46643-CC57-44DD-9323-411FFA8B3BDB}.Debug|x86.ActiveCfg = Debug|Win32
-		{E9B46643-CC57-44DD-9323-411FFA8B3BDB}.Debug|x86.Build.0 = Debug|Win32
-		{E9B46643-CC57-44DD-9323-411FFA8B3BDB}.Release|x64.ActiveCfg = Release|x64
-		{E9B46643-CC57-44DD-9323-411FFA8B3BDB}.Release|x64.Build.0 = Release|x64
-		{E9B46643-CC57-44DD-9323-411FFA8B3BDB}.Release|x86.ActiveCfg = Release|Win32
-		{E9B46643-CC57-44DD-9323-411FFA8B3BDB}.Release|x86.Build.0 = Release|Win32
 		{F0A68391-147F-4AF7-B340-7EABD2872C58}.Debug|x64.ActiveCfg = Debug|x64
 		{F0A68391-147F-4AF7-B340-7EABD2872C58}.Debug|x64.Build.0 = Debug|x64
 		{F0A68391-147F-4AF7-B340-7EABD2872C58}.Debug|x86.ActiveCfg = Debug|Win32
@@ -36,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {16AB8F3F-A5A6-41B0-AF87-31062AA3177A}
+		SolutionGuid = {F1539A02-31A9-40FE-9A9A-8968E6C17867}
 	EndGlobalSection
 EndGlobal
