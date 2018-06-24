@@ -15,6 +15,17 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\ADMINI~1\AppData\Local\Temp\公有继承.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="C:\Users\ADMINI~1\AppData\Local\Temp\保护继承.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="C:\Users\ADMINI~1\AppData\Local\Temp\私有继承.jpg">
+      <Filter>资源文件</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="demo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -24,12 +35,24 @@
     <ClCompile Include="Worker.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Soldier.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Infantry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="Worker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Soldier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Infantry.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

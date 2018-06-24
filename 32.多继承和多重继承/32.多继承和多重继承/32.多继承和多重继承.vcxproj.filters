@@ -18,18 +18,42 @@
     <ClCompile Include="demo.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Infantry.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
     <ClCompile Include="Person.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Soldier.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Worker.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Farmer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MigrantWorker.h">
+      <Filter>头文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MigrantWorker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Infantry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="Person.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Soldier.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
     <ClInclude Include="Worker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Farmer.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

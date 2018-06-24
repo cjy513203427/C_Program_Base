@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{90508E49-C184-45AE-A6D8-6FC66283D827}</ProjectGuid>
-    <RootNamespace>My29公有继承</RootNamespace>
+    <ProjectGuid>{304B9F44-71B7-4C8B-BD13-64B4896236D8}</ProjectGuid>
+    <RootNamespace>My32多继承和多重继承</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -116,11 +116,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="demo.cpp" />
+    <ClCompile Include="Farmer.cpp" />
+    <ClCompile Include="Infantry.cpp" />
+    <ClCompile Include="MigrantWorker.cpp" />
+    <ClCompile Include="MigrantWorker.h" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Soldier.cpp" />
     <ClCompile Include="Worker.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Farmer.h" />
+    <ClInclude Include="Infantry.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Soldier.h" />
     <ClInclude Include="Worker.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
