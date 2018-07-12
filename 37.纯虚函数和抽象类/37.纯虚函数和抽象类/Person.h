@@ -2,6 +2,7 @@
 #define PERSON_H
 #include<string>
 using namespace std;
+//抽象类不可以实例化
 //包含纯虚函数的类为抽象类
 class Person
 {
