@@ -18,7 +18,7 @@ int main()
 	Teacher t2 = t1;
 	Teacher t3(t1);
 	Teacher t4;
-	test(t4);
+	//test(t4);
 	cout << t1.getName() << " " << t1.getAge() << " " << endl;
 	system("pause");
 	return 0;
