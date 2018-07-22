@@ -10,8 +10,8 @@ class Coordinate
 public:
 	Coordinate(int x, int y);
 	//Coordinate &operator-();
-	Coordinate &operator++();
-	Coordinate operator++(int);
+	Coordinate &operator++();//前置++运算符重载
+	Coordinate operator++(int);//后置++运算符重载
 	int getX();
 	int getY();
 

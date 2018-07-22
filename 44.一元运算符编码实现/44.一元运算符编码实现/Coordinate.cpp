@@ -31,16 +31,17 @@ Coordinate &operator-(Coordinate &c)
 	c.m_iY = -c.m_iY;
 	return c;
 }
-//++运算符重载
+//前置++运算符重载
 Coordinate &Coordinate::operator++()
 {
 	//在重载函数内部写前置++和后置++效果是一样的
 	//根据运算符重载函数是前置还是后置判断
-	m_iX++;
+	m_iX++;//++m_iX
 	m_iY++;
 	return *this;
 }
 
+//后置++运算符重载
 Coordinate Coordinate::operator++(int)
 {
 	Coordinate old(*this);
