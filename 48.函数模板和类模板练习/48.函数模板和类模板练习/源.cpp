@@ -2,6 +2,7 @@
 using namespace std;
 
 /**
+*
 * 定义一个矩形类模板Rect
 * 成员函数：calcArea()、calePerimeter()
 * 数据成员：m_length、m_height
