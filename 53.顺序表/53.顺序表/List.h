@@ -19,8 +19,8 @@ public:
 	bool ListInsert(int i,int *Elem);//插入元素
 	bool ListDelete(int i,int *Elem);//删除元素
 private:
-	int *m_pList;
-	int m_iSize;
-	int m_iLength;
+	int *m_pList;//顺序表指针
+	int m_iSize;//用户指定的顺序表容量
+	int m_iLength;//顺序表长度
 };
 #endif // !LIST_H
