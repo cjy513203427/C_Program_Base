@@ -122,10 +122,13 @@
     <Image Include="C:\Users\hasee\AppData\Local\Temp\线性表.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="LIst.h" />
     <ClInclude Include="Node.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="List.cpp" />
     <ClCompile Include="Node.cpp" />
+    <ClCompile Include="源.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
