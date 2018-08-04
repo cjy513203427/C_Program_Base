@@ -51,7 +51,7 @@ bool List::ListInsertHead(Node *pNode)
 		m_pList->next = newNode;
 		newNode->next = temp; 
 		m_iLength++;
-		return false;
+		return true;
 	}
 }
 

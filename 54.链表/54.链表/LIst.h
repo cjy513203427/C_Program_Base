@@ -19,8 +19,8 @@ public:
 	void ListTraverse();//遍历
 	bool ListInsert(int i,Node *pNode);//插入元素
 	bool ListDelete(int i, Node *pNode);//删除元素
-	bool ListInsertHead(Node *pNode);//插入在头结点后面
-	bool ListInsertTail(Node *pNode);//插入到链表最后
+	bool ListInsertHead(Node *pNode);//在头结点后面插入元素
+	bool ListInsertTail(Node *pNode);//在尾结点后面插入元素
 private:
 	Node * m_pList;
 	int m_iLength;
