@@ -57,6 +57,7 @@ H					1			1
 	pMap->depthFirstTraverse(0);
 
 	pMap->resetNode();
+	cout << endl;
 	pMap->breadthFirstTraverse(0);
 	system("pause");
 	return true;

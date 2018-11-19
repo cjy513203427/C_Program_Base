@@ -12,6 +12,8 @@ int main(void)
 	Shape *shape2 = new Circle(8);
 	//只要在Shape类的析构函数前加上virtual关键字使其成为虚析构函数
 	//它的派生类析构函数也变成了虚析构函数，最好子类的析构函数也加上virtual关键字
+
+	//虚函数可以使父类调用子类的析构函数，防止内存泄露
 	shape1->calcArea();
 	shape2->calcArea();
 

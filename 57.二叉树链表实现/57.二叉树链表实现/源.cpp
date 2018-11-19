@@ -46,8 +46,10 @@ int main(void)
 
 	tree->AddNode(2, 0, node5);
 	tree->AddNode(2, 1, node6);
-	tree->DeleteNode(5,NULL);
-	tree->PostorderTraversal();
+	Node* temp = tree->SearchNode(4);
+	cout << temp->index <<"--"<< temp->data<<endl;
+	//tree->DeleteNode(2,NULL);
+	tree->PreorderTraversal();
 	delete tree;
 
 	system("pause");

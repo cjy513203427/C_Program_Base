@@ -27,8 +27,8 @@ namespace B
 using namespace B;
 int main() {
 	cout << A::x << endl;
-	fun();
-	fun2();
+	B::fun();
+	B::fun2();
 	system("pause");
 	return 0;
 }

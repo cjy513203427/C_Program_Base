@@ -25,7 +25,9 @@ bool cMap::addNode(Node *pNode)
 	{
 		return false;
 	}
+	//此时m_pNodeArray[m_iNodeCount]是Node类型，非Node*
 	m_pNodeArray[m_iNodeCount].m_cData = pNode->m_cData;
+	//cout << typeid(m_pNodeArray[m_iNodeCount]).name() << endl;
 	m_iNodeCount++;
 	return true;
 }
