@@ -16,7 +16,7 @@ Node *Tree::SearchNode(int nodeIndex)
 {
 	return m_pRoot->SearchNode(nodeIndex);
 }
-
+//nodeIndex是挂载结点，即父节点索引
 bool Tree::AddNode(int nodeIndex, int direction, Node* pNode)
 {
 	Node *temp = SearchNode(nodeIndex);
