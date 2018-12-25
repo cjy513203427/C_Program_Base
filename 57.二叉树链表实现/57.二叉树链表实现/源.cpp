@@ -48,6 +48,7 @@ int main(void)
 	tree->AddNode(2, 1, node6);
 	Node* temp = tree->SearchNode(4);
 	cout << temp->index <<"--"<< temp->data<<endl;
+	//二叉树删除会把子树也删除
 	//tree->DeleteNode(2,NULL);
 	tree->PreorderTraversal();
 	delete tree;

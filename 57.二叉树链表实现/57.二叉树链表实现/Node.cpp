@@ -54,6 +54,7 @@ Node *Node::SearchNode(int nodeIndex)
 	return NULL;
 }
 
+//删除当前结点，若有子树，一并删除
 void Node::DeleteNode()
 {
 	if (this->pLChild != NULL)
