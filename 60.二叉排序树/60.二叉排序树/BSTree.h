@@ -95,10 +95,10 @@ void BSTree<T>::insert(T key)
 	{
 		if (key > pparent->value)
 		{
-			pparent->rchild = pnode;//否则新节点为其父节点的左孩
+			pparent->rchild = pnode;//新节点为其父节点的右孩子
 		}
 		else
-			pparent->lchild = pnode;//或右孩
+			pparent->lchild = pnode;//新节点为其父节点左孩子
 	}
 	pnode->parent = pparent;		//指明新节点的父节点
 
@@ -205,7 +205,7 @@ void BSTree<T>::remove(BSNode<T>* pnode, T key)
 /*寻找其前驱节点*/
 /*
 一个节点的前驱节点有3种情况：
-1. 它有左子树，则左子树根节点为其前驱节点
+1. 它有左子树，则左子树的最右结点为其前驱节点 
 2. 它没有左子树，且它本身为右子树，则其父节点为其前驱节点
 3. 它没有左子树，且它本身为左子树，则它的前驱节点为“第一个拥有右子树的父节点”
 */

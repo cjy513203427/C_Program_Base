@@ -135,6 +135,7 @@ bool AVLTree<K, V>::Insert(const K& key, const V& value)
 		}
 	}
 }
+//右改组之RR型
 ///右旋
 template<class K, class V>
 void AVLTree<K, V>::_RotateR(AVLTreeNode<K, V>*&  parent)
@@ -168,6 +169,7 @@ void AVLTree<K, V>::_RotateR(AVLTreeNode<K, V>*&  parent)
 	//5.更新subL为当前父节点
 	parent = subL;
 }
+//左改组LL型
 //左旋
 template<class K, class V>
 void AVLTree<K, V>::_RotateL(AVLTreeNode<K, V>*&  parent)
@@ -201,6 +203,7 @@ void AVLTree<K, V>::_RotateL(AVLTreeNode<K, V>*&  parent)
 	//5.更新subR为当前父节点
 	parent = subR;
 }
+//左改组LR型
 //左右双旋
 template<class K, class V>
 void AVLTree<K, V>::_RotateLR(AVLTreeNode<K, V>*&  parent)
@@ -230,6 +233,7 @@ void AVLTree<K, V>::_RotateLR(AVLTreeNode<K, V>*&  parent)
 	}
 
 }
+//右改组RL型
 //右左双旋
 template<class K, class V>
 void AVLTree<K, V>::_RotateRL(AVLTreeNode<K, V>*&  parent)
