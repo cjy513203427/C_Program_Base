@@ -38,9 +38,9 @@ void Test()
 	cout << "height=" << tree.Height() << endl;
 	bool ret = tree.IsBalance();
 	if (ret == true)
-		cout << "This AVLTree is in balanced !" << endl;
+		cout << "AVLTreeÆ½ºâ!" << endl;
 	else
-		cout << "This AVLTree is in a state of imbalance !" << endl;
+		cout << "AVLTree²»Æ½ºâ !" << endl;
 }
 
 int main()

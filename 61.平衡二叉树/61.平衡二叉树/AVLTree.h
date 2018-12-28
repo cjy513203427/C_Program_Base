@@ -5,9 +5,9 @@ struct AVLTreeNode
 	K _key;				//树权值
 	V _value;
 	int  _bf;			//平衡因子 -1,0,1		(每个节点的平衡因子等于左子树的高度减去右子树的高度) 
-						//有的教材定义平衡度是左子树高度减去右子树，都是可以的
+						//有的教材定义平衡度是右子树高度减去左子树，都是可以的
 	AVLTreeNode<K, V>* _parent;	//指向父节点的指针
-	AVLTreeNode<K, V>* _left;			//指向左孩子的指针
+	AVLTreeNode<K, V>* _left;	//指向左孩子的指针
 	AVLTreeNode<K, V>* _right;		//指向右孩子的指针
 
 	AVLTreeNode(const K& key = K(), const V& value = V())
@@ -198,13 +198,13 @@ void AVLTree<K, V>::_RotateRR(AVLTreeNode<K, V>*&  parent)
 	AVLTreeNode<K, V>* subRL = subR->_left;
 	AVLTreeNode<K, V>* ppNode = parent->_parent;		//标记祖先节点
 
-														//1.构建parent子树 链接parent和subRL
+	//1.构建parent子树 链接parent和subRL
 	parent->_right = subRL;
 	if (subRL) subRL->_parent = parent;
 	//2.构建subR子树 链接parent和subR
 	subR->_left = parent;
 	parent->_parent = subR;
-	//3.链接祖先节点和subR节点
+	//3.连接祖先节点和subR节点
 	subR->_parent = ppNode;
 	if (ppNode == NULL)
 	{//如果祖先节点为NULL，说明目前的根节点为subR
@@ -267,24 +267,26 @@ void AVLTree<K, V>::_RotateLR(AVLTreeNode<K, V>*&  parent)
 
 	_RotateLL(parent->_right);
 	_RotateRR(parent);
-
+	//LR(b)型
 	if (bf == -1)
 	{
 		pNode->_bf = 0;
 		subR->_bf = 1;
 	}
+	//LR(a)型
 	else if (bf == 1)
 	{
 		pNode->_bf = -1;
 		subR->_bf = 0;
 	}
+	//LR(c)型
 	else
 	{
 		pNode->_bf = 0;
 		subR->_bf = 0;
 	}
 }
-//中序打印
+//中序遍历
 template<class K, class V>
 void AVLTree<K, V>::_InOrder(AVLTreeNode<K, V>* root)
 {
