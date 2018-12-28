@@ -2,9 +2,9 @@
 template<class K, class V>
 struct AVLTreeNode
 {
-	K _key;
+	K _key;				//树权值
 	V _value;
-	int  _bf;			//平衡因子 -1,0,1		(每个节点的平衡因子等于右子树的高度减去左子树的高度) 
+	int  _bf;			//平衡因子 -1,0,1		(每个节点的平衡因子等于左子树的高度减去右子树的高度) 
 						//有的教材定义平衡度是左子树高度减去右子树，都是可以的
 	AVLTreeNode<K, V>* _parent;	//指向父节点的指针
 	AVLTreeNode<K, V>* _left;			//指向左孩子的指针
@@ -58,20 +58,21 @@ public:
 		return _Height(_root);
 	}
 protected:
-	//右改组之RR型
-	void _RotateR(AVLTreeNode<K, V>*&  parent);
 	//左改组LL型
-	void _RotateL(AVLTreeNode<K, V>*&  parent);
-	//左改组LR型
-	void _RotateLR(AVLTreeNode<K, V>*&  parent);
+	void _RotateLL(AVLTreeNode<K, V>*&  parent);
+	//右改组RR型
+	void _RotateRR(AVLTreeNode<K, V>*&  parent);
 	//右改组RL型
 	void _RotateRL(AVLTreeNode<K, V>*&  parent);
+	//左改组LR型
+	void _RotateLR(AVLTreeNode<K, V>*&  parent);
 	//中序遍历
 	void _InOrder(AVLTreeNode<K, V>* root);
 	//前序遍历
 	void _PreOrder(AVLTreeNode<K, V>* root);
 	//后序遍历
 	void _PostOrder(AVLTreeNode<K, V>* root);
+	//检查二叉排序树是否平衡
 	bool _IsBalance(AVLTreeNode<K, V>* root);
 	int _Height(AVLTreeNode<K, V>* root);
 protected:
@@ -121,9 +122,9 @@ bool AVLTree<K, V>::Insert(const K& key, const V& value)
 	{
 		//更新平衡因子
 		if (cur == parent->_left)
-			parent->_bf--;
-		else if (cur == parent->_right)
 			parent->_bf++;
+		else if (cur == parent->_right)
+			parent->_bf--;
 
 		//检验平衡因子是否合法
 		if (parent->_bf == 0)
@@ -136,39 +137,39 @@ bool AVLTree<K, V>::Insert(const K& key, const V& value)
 		//	2 -2 平衡因子不合法 需要进行旋转 降低高度
 		else   
 		{
-			if (parent->_bf == 2)
-			{
-				if (cur->_bf == 1)
-					_RotateL(parent);
-				else
-					_RotateRL(parent);
-			}
-			else if (parent->_bf == -2)
+			if (parent->_bf == -2)
 			{
 				if (cur->_bf == -1)
-					_RotateR(parent);
+					_RotateRR(parent);
 				else
 					_RotateLR(parent);
+			}
+			else if (parent->_bf == 2)
+			{
+				if (cur->_bf == 1)
+					_RotateLL(parent);
+				else
+					_RotateRL(parent);
 			}
 			break;
 		}
 	}
 }
-//右改组之RR型
-///右旋
+
+//左改组LL型
 template<class K, class V>
-void AVLTree<K, V>::_RotateR(AVLTreeNode<K, V>*&  parent)
+void AVLTree<K, V>::_RotateLL(AVLTreeNode<K, V>*&  parent)
 {
-	AVLTreeNode<K, V>* subL = parent->_left;
-	AVLTreeNode<K, V>* subLR = subL->_right;
-	AVLTreeNode<K, V>* ppNode = parent->_parent;		//标记祖先节点
-														//1.构建parent子树 将parent和subLR链接起来
+	AVLTreeNode<K, V>* subL = parent->_left; //构造的左子树
+	AVLTreeNode<K, V>* subLR = subL->_right;//subL的右子树
+	AVLTreeNode<K, V>* ppNode = parent->_parent;//标记祖先节点
+	//1.构建parent子树 将parent和subLR链接起来
 	parent->_left = subLR;
 	if (subLR) subLR->_parent = parent;
 	//2.构建subL子树 将subL与parent链接起来
 	subL->_right = parent;
 	parent->_parent = subL;
-	//3.将祖先节点与sunL链接起来
+	//3.将祖先节点与subL链接起来
 	if (ppNode == NULL)
 	{	//如果祖先为NULL，说明当前subL节点为根节点
 		subL->_parent = NULL;
@@ -188,10 +189,10 @@ void AVLTree<K, V>::_RotateR(AVLTreeNode<K, V>*&  parent)
 	//5.更新subL为当前父节点
 	parent = subL;
 }
-//左改组LL型
-//左旋
+
+//右改组RR型
 template<class K, class V>
-void AVLTree<K, V>::_RotateL(AVLTreeNode<K, V>*&  parent)
+void AVLTree<K, V>::_RotateRR(AVLTreeNode<K, V>*&  parent)
 {
 	AVLTreeNode<K, V>* subR = parent->_right;
 	AVLTreeNode<K, V>* subRL = subR->_left;
@@ -222,27 +223,29 @@ void AVLTree<K, V>::_RotateL(AVLTreeNode<K, V>*&  parent)
 	//5.更新subR为当前父节点
 	parent = subR;
 }
-//左改组LR型
-//左右双旋
+
+//右改组RL型
 template<class K, class V>
-void AVLTree<K, V>::_RotateLR(AVLTreeNode<K, V>*&  parent)
+void AVLTree<K, V>::_RotateRL(AVLTreeNode<K, V>*&  parent)
 {
 	AVLTreeNode<K, V>* pNode = parent;
+	//构造的左子树
 	AVLTreeNode<K, V>* subL = parent->_left;
-	AVLTreeNode<K, V>* subLR = subL->_right;
-	int bf = subLR->_bf;
+	//subL的右子树
+	AVLTreeNode<K, V>* subRL = subL->_right;
+	int bf = subRL->_bf;
 
-	_RotateL(parent->_left);
-	_RotateR(parent);
+	_RotateRR(parent->_left);
+	_RotateLL(parent);
 
-	if (bf == 1)
+	if (bf == -1)
 	{
 		pNode->_bf = 0;
-		subL->_bf = -1;
+		subL->_bf = 1;
 	}
-	else if (bf == -1)
+	else if (bf == 1)
 	{
-		pNode->_bf = 1;
+		pNode->_bf = -1;
 		subL->_bf = 0;
 	}
 	else
@@ -252,27 +255,27 @@ void AVLTree<K, V>::_RotateLR(AVLTreeNode<K, V>*&  parent)
 	}
 
 }
-//右改组RL型
-//右左双旋
+
+//左改组LR型
 template<class K, class V>
-void AVLTree<K, V>::_RotateRL(AVLTreeNode<K, V>*&  parent)
+void AVLTree<K, V>::_RotateLR(AVLTreeNode<K, V>*&  parent)
 {
 	AVLTreeNode<K, V>* pNode = parent;
 	AVLTreeNode<K, V>* subR = parent->_right;
-	AVLTreeNode<K, V>* subRL = subR->_left;
-	int bf = subRL->_bf;
+	AVLTreeNode<K, V>* subLR = subR->_left;
+	int bf = subLR->_bf;
 
-	_RotateR(parent->_right);
-	_RotateL(parent);
+	_RotateLL(parent->_right);
+	_RotateRR(parent);
 
-	if (bf == 1)
+	if (bf == -1)
 	{
 		pNode->_bf = 0;
-		subR->_bf = -1;
+		subR->_bf = 1;
 	}
-	else if (bf == -1)
+	else if (bf == 1)
 	{
-		pNode->_bf = 1;
+		pNode->_bf = -1;
 		subR->_bf = 0;
 	}
 	else
@@ -337,7 +340,7 @@ bool AVLTree<K, V>::_IsBalance(AVLTreeNode<K, V>* root)
 {
 	if (root == NULL)
 		return true;
-	int bf = _Height(root->_right) - _Height(root->_left);
+	int bf =  _Height(root->_left) - _Height(root->_right);
 	if (root->_bf != bf)
 	{
 		cout << root->_key << endl;
