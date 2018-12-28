@@ -1,7 +1,7 @@
 #ifndef BINARY_SEARCH_TREE_HPP
 #define BINARY_SEARCH_TREE_HPP
 
-//二叉查找树的节点结构
+//二叉查找树的结点结构
 template <typename T>
 struct BSNode
 {

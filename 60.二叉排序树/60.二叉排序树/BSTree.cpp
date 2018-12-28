@@ -35,10 +35,17 @@ int main()
 
 	cout << endl << "中序遍历：" << endl;
 	t.inOrder();
-	/*cout << endl << "前序遍历：" << endl;
+	cout << endl << "前序遍历：" << endl;
 	t.preOrder();
 	cout << endl << "后序遍历：" << endl;
-	t.postOrder();*/
+	t.postOrder();
+
+	/*BSNode<int>* t1 = nullptr;
+	t1->value = 10;
+	t1->lchild = nullptr;
+	t1->rchild = nullptr;
+	t1->parent = nullptr;
+	cout<<t.predecessor(t1)<<endl;*/
 
 	cout << "最大元素:" << t.search_maximum() << endl;
 	cout << "最小元素:" << t.search_minimun() << endl;

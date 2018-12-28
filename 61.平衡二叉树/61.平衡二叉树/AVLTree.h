@@ -27,11 +27,24 @@ public:
 	AVLTree()
 		:_root(NULL)
 	{}
-	bool Insert(const K& key, const V& value);  //插入数据
-												//中序打印
+	//插入数据
+	bool Insert(const K& key, const V& value);  
+	//中序遍历										
 	void  InOrder()
 	{
 		_InOrder(_root);
+		cout << endl;
+	}
+	//前序遍历
+	void  PreOrder()
+	{
+		_PreOrder(_root);
+		cout << endl;
+	}
+	//后序遍历
+	void  PostOrder()
+	{
+		_PostOrder(_root);
 		cout << endl;
 	}
 	//判断AVLTree树是否平衡
@@ -53,7 +66,12 @@ protected:
 	void _RotateLR(AVLTreeNode<K, V>*&  parent);
 	//右改组RL型
 	void _RotateRL(AVLTreeNode<K, V>*&  parent);
+	//中序遍历
 	void _InOrder(AVLTreeNode<K, V>* root);
+	//前序遍历
+	void _PreOrder(AVLTreeNode<K, V>* root);
+	//后序遍历
+	void _PostOrder(AVLTreeNode<K, V>* root);
 	bool _IsBalance(AVLTreeNode<K, V>* root);
 	int _Height(AVLTreeNode<K, V>* root);
 protected:
@@ -115,7 +133,8 @@ bool AVLTree<K, V>::Insert(const K& key, const V& value)
 			cur = parent;
 			parent = cur->_parent;
 		}
-		else   //	2 -2 平衡因子不合法 需要进行旋转 降低高度
+		//	2 -2 平衡因子不合法 需要进行旋转 降低高度
+		else   
 		{
 			if (parent->_bf == 2)
 			{
@@ -271,6 +290,26 @@ void AVLTree<K, V>::_InOrder(AVLTreeNode<K, V>* root)
 	_InOrder(root->_left);
 	cout << root->_key << " ";
 	_InOrder(root->_right);
+}
+//前序遍历
+template<class K, class V>
+void AVLTree<K, V>::_PreOrder(AVLTreeNode<K, V>* root)
+{
+	if (root == NULL)
+		return;
+	cout << root->_key << " ";
+	_PreOrder(root->_left);
+	_PreOrder(root->_right);
+}
+//后序遍历
+template<class K, class V>
+void AVLTree<K, V>::_PostOrder(AVLTreeNode<K, V>* root)
+{
+	if (root == NULL)
+		return;
+	_PostOrder(root->_left);
+	_PostOrder(root->_right);
+	cout << root->_key << " ";
 }
 //求AVL树的高度
 template<class K, class V>
