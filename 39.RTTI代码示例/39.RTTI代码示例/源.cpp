@@ -2,16 +2,16 @@
 #include"Bird.h"
 #include <iostream>
 using namespace std;
-//RTTI:Run Time Type Identification£¬ÔËĞĞÊ±ÀàĞÍÒì³£
-//typeid()ÀàËÆÓÚJavaÖĞistanceof()
+//RTTI:Run Time Type Identificationï¼Œè¿è¡Œæ—¶ç±»å‹å¼‚å¸¸
+//typeid()ç±»ä¼¼äºJavaä¸­instanceof()
 void doSomething(Flyable *obj) 
 {
 	cout << typeid(*obj).name() << endl;
 	obj->takeoff();
 	if (typeid(*obj) == typeid(Bird))
 	{
-		//dynamic_cast²»ÄÜ×ª»»²»º¬Ğéº¯ÊıµÄ¶ÔÏó
-		//dynamic_cast²ÎÊıÊÇÒ»¸ö¶ÔÏóµÄÒıÓÃ»òÕßÖ¸Õë
+		//dynamic_castä¸èƒ½è½¬æ¢ä¸å«è™šå‡½æ•°çš„å¯¹è±¡
+		//dynamic_castå‚æ•°æ˜¯ä¸€ä¸ªå¯¹è±¡çš„å¼•ç”¨æˆ–è€…æŒ‡é’ˆ
 		Bird *bird = dynamic_cast<Bird*>(obj);
 		bird->foraging();
 	}
