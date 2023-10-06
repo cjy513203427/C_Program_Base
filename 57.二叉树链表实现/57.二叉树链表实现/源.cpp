@@ -2,10 +2,10 @@
 #include<iostream>
 using namespace std;
 /*
-Ç°Ðò±éÀú£º0134256
-ÖÐÐò±éÀú£º3140526
-ºóÐò±éÀú£º3415620
-								(0)
+Ç°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½0134256
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3140526
+ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½3415620
+								0(0)
 				5(1)							 8(2)
 		2(3)			6(4)			9(5)			7(6)
 
@@ -48,9 +48,11 @@ int main(void)
 	tree->AddNode(2, 1, node6);
 	Node* temp = tree->SearchNode(4);
 	cout << temp->index <<"--"<< temp->data<<endl;
-	//¶þ²æÊ÷É¾³ý»á°Ñ×ÓÊ÷Ò²É¾³ý
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò²É¾ï¿½ï¿½
 	//tree->DeleteNode(2,NULL);
-	tree->PreorderTraversal();
+	// tree->PreorderTraversal();
+	// tree->DFS();
+	tree->BFS();
 	delete tree;
 
 	system("pause");

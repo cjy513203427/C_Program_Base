@@ -5,14 +5,18 @@
 class Tree
 {
 public:
-	Tree();//´´½¨Ê÷
-	~Tree();//Ïú»ÙÊ÷
-	Node *SearchNode(int nodeIndex);//ËÑË÷½áµã
-	bool AddNode(int nodeIndex, int direction, Node* pNode);//Ìí¼Ó½áµã
-	bool DeleteNode(int nodeIndex, Node* pNode);//É¾³ý½áµã
-	void PreorderTraversal();//Ç°Ðò±éÀú
-	void InorderTraversal();//ÖÐÐò±éÀú
-	void PostorderTraversal();//ºóÐò±éÀú
+	Tree();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	~Tree();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	Node *SearchNode(int nodeIndex);//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	bool AddNode(int nodeIndex, int direction, Node* pNode);//ï¿½ï¿½ï¿½Ó½ï¿½ï¿½
+	bool DeleteNode(int nodeIndex, Node* pNode);//É¾ï¿½ï¿½ï¿½ï¿½ï¿½
+	void PreorderTraversal();//Ç°ï¿½ï¿½ï¿½ï¿½ï¿½
+	void InorderTraversal();//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void PostorderTraversal();
+    void DFS();
+    void DFSRecursive(Node *node);
+    void BFS();
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 private:
 	Node * m_pRoot;
 };
