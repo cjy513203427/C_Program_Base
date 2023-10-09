@@ -30,7 +30,7 @@ H					1			1
 	Node *pNodeE = new Node('E');
 	Node *pNodeF = new Node('F');
 	Node *pNodeG = new Node('G');
-	Node *pNodeH = new Node('H');
+	Node *pNodeH = new Node('H'); 
 
 	pMap->addNode(pNodeA);
 	pMap->addNode(pNodeB);

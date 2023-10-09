@@ -28,6 +28,8 @@ private:
 	int m_iNodeCount;//已经添加的结点（顶点）个数
 	Node *m_pNodeArray;//用来存放顶点数组
 	int *m_pMatrix;//用来存放邻接矩阵
+
+	std::vector<Node> nodes;
 };
 
 #endif // !CMAP_H
